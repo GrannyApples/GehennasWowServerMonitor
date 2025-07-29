@@ -35,7 +35,7 @@ When the realm status is **UP**, the script prints the status and plays a Window
 2. **Install `jq`** if you don't already have it:
 
    - With [Scoop](https://scoop.sh):
-     ```
+     ```bash
      scoop install jq
      ```
 
@@ -43,49 +43,35 @@ When the realm status is **UP**, the script prints the status and plays a Window
 
 3. **Edit the script** to insert your Blizzard API credentials:
 
+   ```bash
+   CLIENT_ID="your_client_id_here"
+   CLIENT_SECRET="your_client_secret_here"
 ````
-
-CLIENT\_ID="your\_client\_id\_here"
-CLIENT\_SECRET="your\_client\_secret\_here"
-
-```
 
 4. **(Optional) Customize your region, realm, namespace, or locale**:
 
-Inside the script, modify these values:
+   Inside the script, modify these values:
 
-```
+   ```bash
+   REGION="eu"
+   REALM_SLUG="gehennas"
+   NAMESPACE="dynamic-classic-eu"
+   LOCALE="en_GB"
+   ```
 
-REGION="eu"
-REALM\_SLUG="gehennas"
-NAMESPACE="dynamic-classic-eu"
-LOCALE="en\_GB"
-
-```
-
-You can replace these values to check the status of any WoW realm:
-- `REALM_SLUG`: your realm name in lowercase with no spaces
-- `NAMESPACE`: depending on the version (e.g., `dynamic-classic`, `dynamic-classic-mop-eu`, etc.)
-- `REGION`: `eu`, `us`, `kr`, or `tw`
-- `LOCALE`: `en_GB`, `en_US`, etc.
-
-See the [Blizzard API Docs](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis) for valid options.
+   You can find available values in the [Blizzard API Docs](https://develop.battle.net/documentation/world-of-warcraft/game-data-apis).
 
 5. **Make the script executable**:
 
-```
-
-chmod +x check-gehennas.sh
-
-```
+   ```bash
+   chmod +x check-gehennas.sh
+   ```
 
 6. **Run the script**:
 
-```
-
-./check-gehennas.sh
-
-```
+   ```bash
+   ./check-gehennas.sh
+   ```
 
 ---
 
@@ -95,10 +81,8 @@ When the realm status becomes `UP`, the script plays a **Windows ping sound** us
 
 You can customize the sound file by editing this line in the script:
 
-```
-
-powershell.exe -c "(New-Object Media.SoundPlayer 'C:\Windows\Media\Windows Notify System Generic.wav').PlaySync();"
-
+```bash
+powershell.exe -c "(New-Object Media.SoundPlayer 'C:\\Windows\\Media\\Windows Notify System Generic.wav').PlaySync();"
 ```
 
 Replace it with any `.wav` file on your PC if desired.
@@ -107,9 +91,8 @@ Replace it with any `.wav` file on your PC if desired.
 
 ## 📝 Notes
 
-- The script checks every few seconds in a loop.
-- When the realm is available, it prints `"UP"` multiple times and plays a sound.
-- You can change the realm and region to monitor **any realm** supported by Blizzard.
+* The script checks every few seconds in a loop.
+* When the realm is available, it prints `"UP"` multiple times and plays a sound.
+* You can change the realm and region to monitor **any realm** supported by Blizzard.
 
 ---
-
