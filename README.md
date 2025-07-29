@@ -101,13 +101,3 @@ Replace it with any `.wav` file on your PC if desired.
 
 ---
 
-## 🧾 License
-
-MIT License
-
-```
-
----
-
-Let me know if you'd like this as a downloadable file or want it in Swedish too!
-```
