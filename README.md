@@ -1,6 +1,3 @@
-Sure! Here's an updated `README.md` with the additional instructions about changing the namespace, region, locale, and realm slug, along with the notification info:
-
----
 
 ````markdown
 # WoW Realm Status Notifier (Gehennas - Classic MoP EU)
